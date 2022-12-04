@@ -1,10 +1,11 @@
 import React from "react";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <button type="button" className="btn btn-primary">
-      Bootstrap Adding.
-    </button>
+    <div className="container">
+      <Home />
+    </div>
   );
 }
 

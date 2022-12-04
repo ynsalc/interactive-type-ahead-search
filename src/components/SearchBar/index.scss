@@ -1,0 +1,31 @@
+.form-control {
+  text-indent: 5px;
+  border: none;
+  height: 45px;
+  border-radius: 0px;
+  background-color: #433e5c !important;
+  color: #fff !important;
+  border-bottom: 1px solid #fff;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #eee;
+  outline: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #eee;
+}
+
+.form-control::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
+
+.inputs {
+  position: relative;
+}
+
+.main{
+  background-color: #433e5c;
+}
