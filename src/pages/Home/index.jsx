@@ -4,10 +4,15 @@ import SearchBar from "../../components/SearchBar";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
   return (
     <>
-      <SearchBar value={searchInput} change={setSearchInput}/>
-      <Datalist value={searchInput} />
+      <SearchBar
+        value={searchInput}
+        change={setSearchInput}
+        setShow={setShowSearch}
+      />
+      <Datalist value={searchInput} show={showSearch} />
     </>
   );
 };

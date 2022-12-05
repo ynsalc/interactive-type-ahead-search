@@ -1,30 +1,29 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import "./index.scss";
 
-const SearchBar = ({ value, change }) => {
+const SearchBar = ({ value, change, setShow }) => {
   const handleChange = (e) => {
     e.preventDefault();
     change(e.target.value.toLowerCase());
+    if (e.target.value !== "") {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
   };
   return (
-    <div className="main p-3">
-      <div className="inputs">
-        <div className="col-md-6">
-          <div className="d-flex align-items-center">
-            <FontAwesomeIcon icon={faSearch} color="white" />
-            <input
-              type="text"
-              className="form-control"
-              value={value}
-              onChange={handleChange}
-              placeholder="SEARCH(Client Name / Policy Number)"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <nav className="nav-search">
+      <header className="container search-header-bar">
+        <i className="fa fa-search" data-testid="search-icon"></i>
+        <input
+          type="text"
+          data-testid="search-input"
+          className="search-input"
+          value={value}
+          onChange={handleChange}
+          placeholder="SEARCH(Client Name / Policy Number)"
+        />
+      </header>
+    </nav>
   );
 };
 

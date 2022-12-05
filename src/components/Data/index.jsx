@@ -1,43 +1,28 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faPhone,
-  faEnvelope,
-  faFile,
-} from "@fortawesome/free-solid-svg-icons";
-import "./index.scss";
 
 const Data = ({ list }) => {
   return (
-    <div className="mt-3">
-      <div className="d-flex justify-content-between align-items-center">
-        <div className="d-flex flex-row align-items-center">
-          <span className="star">
-            <FontAwesomeIcon icon={faStar} color="orange" />
+    <section className="striped" key={list.id}>
+      <div className="container">
+        <h5 className="pt-3" data-testid="search-bag-item-name">
+          {list.fullName}
+        </h5>
+        <div className="pb-3 d-sm-flex col-sm-12">
+          <span className="d-block col-sm-4">
+            <i className="fa fa-phone"></i> {list.phone}
           </span>
-
-          <div className="d-flex flex-column">
-            <span>{list.fullName}</span>
-            <div className="d-flex flex-row align-items-center time-text">
-              <small className="d-flex justify-content-between">
-                <FontAwesomeIcon icon={faPhone} />
-                {list.phone}
-              </small>
-              <small>
-                <FontAwesomeIcon icon={faEnvelope} />
-                {list.email}
-              </small>
-            </div>
-          </div>
+          <span className="d-block col-sm-4">
+            <i className="fa fa-at"></i> {list.email}
+          </span>
+          <span
+            className="d-block col-sm-4"
+            data-testid="search-bag-item-policy"
+          >
+            <i className="fa fa-file"></i> Policy No: {list.policyNo}
+          </span>
         </div>
-
-        <span className="content-text-1">
-          <FontAwesomeIcon icon={faFile} />
-          {list.policyNo}
-        </span>
       </div>
-    </div>
+    </section>
   );
 };
 
